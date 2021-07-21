@@ -4,6 +4,9 @@
   "description": "Full stack open 2021 exercise 3.1 - 3.6",
   "main": "index.js",
   "scripts": {
+    "build:ui": "rm -rf build && cd ../Full Stack Open 2021/phonebook && rm -rf build && yarn build && cp -r build ../../phonebook-backend",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
